@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import PostCard from '../../shared/components/blocks/PostCard'
+import { Button } from '../../shared/components/ui/button'
 import { posts } from '../../shared/constants/posts'
 
 export default function TagsPage() {
@@ -20,13 +21,13 @@ export default function TagsPage() {
     <div>
       <div className="mb-4">
         {tags.map((tag) => (
-          <button
+          <Button
             key={tag}
             onClick={() => toggle(tag)}
             className={`mr-2 ${selected.includes(tag) ? 'font-bold' : ''}`}
           >
             {tag} ({posts.filter((p) => p.tags.includes(tag)).length})
-          </button>
+          </Button>
         ))}
       </div>
       {filtered.map((post) => (

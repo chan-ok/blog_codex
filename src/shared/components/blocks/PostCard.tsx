@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import type { Post } from '../../types/post'
+import { Card } from '../ui/card'
 
 export interface PostCardProps {
   post: Post
@@ -7,7 +8,7 @@ export interface PostCardProps {
 
 export default function PostCard({ post }: PostCardProps) {
   return (
-    <div className="border rounded p-4 mb-4">
+    <Card className="mb-4">
       {post.image && <img src={post.image} alt="" className="mb-2" />}
       <h2 className="text-xl font-bold">
         <Link to={`/posts/${post.id}`}>{post.title}</Link>
@@ -24,6 +25,6 @@ export default function PostCard({ post }: PostCardProps) {
           </span>
         ))}
       </div>
-    </div>
+    </Card>
   )
 }
