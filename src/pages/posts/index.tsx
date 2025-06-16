@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import PostCard from '../../shared/components/blocks/PostCard'
+import { Button } from '../../shared/components/ui/button'
 import { posts } from '../../shared/constants/posts'
 import { getPostsByPage, generatePostIndex } from '../../shared/libs/pagination'
 
@@ -17,15 +18,15 @@ export default function PostsPage() {
         <PostCard key={post.id} post={post} />
       ))}
       <div className="mt-4 flex justify-center space-x-2">
-        <button onClick={() => setPage((p) => Math.max(1, p - 1))} disabled={page === 1}>
+        <Button onClick={() => setPage((p) => Math.max(1, p - 1))} disabled={page === 1}>
           Prev
-        </button>
+        </Button>
         <span>
           {page} / {totalPages || 1}
         </span>
-        <button onClick={() => setPage((p) => Math.min(totalPages, p + 1))} disabled={page >= totalPages}>
+        <Button onClick={() => setPage((p) => Math.min(totalPages, p + 1))} disabled={page >= totalPages}>
           Next
-        </button>
+        </Button>
       </div>
     </div>
   )
