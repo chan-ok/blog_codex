@@ -404,3 +404,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Node
+dist
+dist-ssr
+logs
+*.log
+*.local
