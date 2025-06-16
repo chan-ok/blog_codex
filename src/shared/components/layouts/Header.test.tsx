@@ -3,9 +3,10 @@ import { describe, it, expect } from 'vitest'
 import '@testing-library/jest-dom'
 import { Header } from './Header'
 import { vi } from 'vitest'
+import type { ReactNode } from 'react'
 
 vi.mock('@tanstack/react-router', () => ({
-  Link: (props: any) => <a>{props.children}</a>,
+  Link: (props: { children: ReactNode }) => <a>{props.children}</a>,
 }))
 
 describe('Header', () => {
